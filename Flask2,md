@@ -1,0 +1,63 @@
+# Routing Questions
+
+11. What is routing in Flask?
+
+Routing maps URLs to Python functions.
+
+12. How to pass variables in a URL?
+@app.route('/user/<name>')
+def user(name):
+    return name
+13. What are route converters?
+
+Examples:
+
+int
+
+float
+
+string
+
+path
+
+Example:
+
+@app.route('/post/<int:id>')
+14. Difference between GET and POST?
+
+GET → Retrieve data
+POST → Send data to server
+
+15. How to handle POST requests?
+@app.route('/login', methods=['POST'])
+3. Request and Response
+16. What is Flask request object?
+
+The request object contains:
+
+form data
+
+headers
+
+cookies
+
+request method
+
+17. How to access form data?
+request.form['username']
+18. How to return JSON response?
+from flask import jsonify
+return jsonify(data)
+19. What is make_response()?
+
+Used to customize HTTP responses.
+
+20. How to read query parameters?
+
+Example:
+
+/search?q=python
+
+Code:
+
+request.args.get('q')

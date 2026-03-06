@@ -1,0 +1,32 @@
+31. Hash password.
+from werkzeug.security import generate_password_hash
+hash = generate_password_hash("password")
+
+32. Verify password.
+check_password_hash(hash, "password")
+
+33. Create login session.
+from flask import session
+session["user"] = username
+
+34. Logout user.
+session.pop("user", None)
+
+35. Protect route.
+if "user" not in session:
+    return "Unauthorized"
+
+36. Create login decorator.
+from functools import wraps
+
+37. Use Flask-Login
+login_user(user)
+
+38. Load user function.
+@login_manager.user_loader
+
+39. Check authenticated user.
+current_user.is_authenticated
+
+40. JWT authentication using Flask-JWT-Extended
+create_access_token(identity=user.id)
